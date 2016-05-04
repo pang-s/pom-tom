@@ -8,8 +8,8 @@ a pomodoro time management tool powered by electron
 - run `npm run build` to make Example.app
 - run `npm start` to run app from CLI without building Example.app
 
-### TO DO:
-loTS!!!
+### :construction: TO DO :construction::
+loTS!!! 
 
 ### Built with
 

@@ -1,8 +1,9 @@
 #pom-tom
 
-a pomodoro time management tool powered by electron
+A pomodoro time management tool powered by Electron.
 
-## instructions
+https://en.wikipedia.org/wiki/Pomodoro_Technique
+## Instructions
 
 - run `npm install`
 - run `npm run build` to make Example.app

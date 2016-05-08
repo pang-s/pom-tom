@@ -9,24 +9,59 @@
 <body>
   <p>
 
-    Write your task here: <input type="text" id="myText" value=":D">
+    Decide your task: <input type="text" id="myText" value=":D">
 
 
 
 
 <br><br>
-    <button onclick="setTimeout(myFunction, 3000);">Try it</button>
+Click start to run 25 min timer. <br><br>
+
+    <button onclick="startTiming();">Start</button>
+
+<br><br>
+    You have <span id="time">25:00</span> minutes left. <br><br>
+        shining stars: <br>
+        &#x1F31F; &#x2B50; &#x2B50; &#x2B50; <br><br>
+        If you have less than four stars take a 3-5 min break.
+        Otherwise take a 15-30 min break.
+      </p>
+
 
     <script>
-    function myFunction() {
-        alert('Hello');
-    }
+
+    var STARS = 0;
+    function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    var power_on = true;
+    setInterval(function () {
+        if (power_on){
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          alert('Time\'s up! ');
+          power_on = false;
+          STARS += 1;
+          //timer = duration;
+        }
+      }
+    }, 1000);
+}
+
+function startTiming() {
+    var twentyFiveMins = 25*60,
+        display = document.querySelector('#time');
+    startTimer(twentyFiveMins, display);
+};
+
     </script>
 
-    decide your task: <br>
-    start 25-min-timer <br>
-    shining stars: <br>
-    &#x1F31F; &#x2B50; &#x2B50; &#x2B50;
-  </p>
+
 </body>
 </html>

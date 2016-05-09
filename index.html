@@ -7,30 +7,31 @@
 <title>pom-tom</title>
 </head>
 <body>
+  <div id="main_div">
   <p>
 
     Decide your task: <input type="text" id="myText" value=":D">
-
-
-
-
-<br><br>
-Click start to run 25 min timer. <br><br>
-
+    <br><br>
+    <span id="time">25:00</span>
+    <br><br>
     <button onclick="startTiming();">Start</button>
-
-<br><br>
-    You have <span id="time">25:00</span> minutes left. <br><br>
-        shining stars: <br>
-        &#x1F31F; &#x2B50; &#x2B50; &#x2B50; <br><br>
+    <br><br>
+    <span id="stars"> &#x2B50;&#x2B50;&#x2B50;&#x2B50; </span>
+    <br><br>
+    <span id="break">25:00</span>
+    <br><br>
+    <button onclick="startBreaktime();">Break</button>
+    <br><br>
         If you have less than four stars take a 3-5 min break.
         Otherwise take a 15-30 min break.
       </p>
 
+</div>
 
     <script>
 
     var STARS = 0;
+    var BREAK_ON = false;
     function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     var power_on = true;
@@ -45,19 +46,93 @@ Click start to run 25 min timer. <br><br>
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-          alert('Time\'s up! ');
+          alert('Time\'s up! Have a break if you need.');
           power_on = false;
           STARS += 1;
+          updateStars();
+          if (STARS == 4){
+            STARS = 0;
+          }
+
           //timer = duration;
         }
       }
     }, 1000);
 }
 
+function updateStars(){
+  starDisplay = document.querySelector('#stars');
+  if (STARS == 0){
+    starDisplay.textContent = String.fromCodePoint(11088) + String.fromCodePoint(11088)
+    + String.fromCodePoint(11088) + String.fromCodePoint(11088);
+  }
+  if (STARS == 1){
+    starDisplay.textContent = String.fromCodePoint(127775)+ String.fromCodePoint(11088)
+    + String.fromCodePoint(11088) + String.fromCodePoint(11088);
+  }
+  else if(STARS == 2){
+    starDisplay.textContent = String.fromCodePoint(127775)+ String.fromCodePoint(127775)
+    + String.fromCodePoint(11088) + String.fromCodePoint(11088);
+  }
+  else if(STARS == 3){
+    starDisplay.textContent = String.fromCodePoint(127775)+ String.fromCodePoint(127775)
+    + String.fromCodePoint(127775) + String.fromCodePoint(11088);
+  }
+  else{
+    starDisplay.textContent = String.fromCodePoint(127775)+ String.fromCodePoint(127775)
+    + String.fromCodePoint(127775) + String.fromCodePoint(127775);
+
+  }
+}
+
+function startBreak(dura, disp) {
+var breaktimer = dura, mins, secs;
+
+setInterval(function () {
+    if (BREAK_ON){
+    mins = parseInt(breaktimer / 60, 10);
+    secs = parseInt(breaktimer % 60, 10);
+
+    mins = mins < 10 ? "0" + mins : mins;
+    secs = secs < 10 ? "0" + secs : secs;
+
+    disp.textContent = mins + ":" + secs;
+
+    if (--breaktimer < 0) {
+      alert('Break\'s up! Start timer again.');
+      BREAK_ON = false;
+      breaktimer = dura;
+    }
+  }
+}, 1000);
+}
+
+function startBreaktime() {
+  if (STARS == 0){
+    alert('Keep working!');
+    BREAK_ON = false;
+  }
+  else if (STARS < 4){
+    var fiveMins = 3,
+    disp = document.querySelector('#break');
+    BREAK_ON = true;
+    startBreak(fiveMins, disp);
+  }
+
+  else if(STARS == 4){
+    var twentyMins = 10,
+    disp = document.querySelector('#break');
+    BREAK_ON = true;
+    startBreak(twentyMins, disp);
+  }
+};
+
 function startTiming() {
-    var twentyFiveMins = 25*60,
+  if (BREAK_ON == false){
+    var twentyFiveMins = 1,
         display = document.querySelector('#time');
     startTimer(twentyFiveMins, display);
+  }
 };
 
     </script>

@@ -1,3 +1,9 @@
 p{
+  font-family: verdana;
   text-align: center;
+  padding: 20px 30px 30px 30px;
+}
+
+#main_div{
+  background-color: gray;
 }

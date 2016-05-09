@@ -10,7 +10,9 @@ https://en.wikipedia.org/wiki/Pomodoro_Technique
 - run `npm start` to run app from CLI without building Example.app
 
 ### :construction: TO DO :construction::
-loTS!!! 
+- fix break timer
+- *aesthetic*
+- loTS!!! 
 
 ### Built with
 

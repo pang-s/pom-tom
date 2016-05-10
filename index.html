@@ -46,19 +46,73 @@
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-          alert('Time\'s up! Have a break if you need.');
+          if(STARS < 3){
+          alert('Time\'s up! You get a star. Have a break.');
+        }
+        else{
+          alert('Time\'s up! You have 4 stars. Have a BIG break.');
+        }
           power_on = false;
           STARS += 1;
           updateStars();
+          if (STARS < 4){
+            integrateBreak();
+          }
+
           if (STARS == 4){
             STARS = 0;
+
           }
+
 
           //timer = duration;
         }
       }
     }, 1000);
 }
+
+function integrateBreak(){
+if(STARS < 4){
+  var twentyFiveMins = 2,
+      display = document.querySelector('#time');
+  integrateTimer(twentyFiveMins, display);
+}
+
+
+else{
+  var twentyFiveMins = 3,
+      display = document.querySelector('#time');
+  integrateTimer(twentyFiveMins, display);
+}
+
+}
+
+
+function integrateTimer(duration, display) {
+var timer = duration, minutes, seconds;
+var power_on = true;
+setInterval(function () {
+    if (power_on){
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    display.textContent = minutes + ":" + seconds;
+
+    if (--timer < 0) {
+      alert('Break\'s up! Start working.');
+      power_on = false;
+      if (STARS != 0){
+      startTiming();
+    }
+      //timer = duration;
+    }
+  }
+}, 1000);
+}
+
 
 function updateStars(){
   starDisplay = document.querySelector('#stars');

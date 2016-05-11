@@ -18,10 +18,6 @@
     <br><br>
     <span id="stars"> &#x2B50;&#x2B50;&#x2B50;&#x2B50; </span>
     <br><br>
-    <span id="break">25:00</span>
-    <br><br>
-    <button onclick="startBreaktime();">Break</button>
-    <br><br>
         If you have less than four stars take a 3-5 min break.
         Otherwise take a 15-30 min break.
       </p>
@@ -139,47 +135,7 @@ function updateStars(){
   }
 }
 
-function startBreak(dura, disp) {
-var breaktimer = dura, mins, secs;
 
-setInterval(function () {
-    if (BREAK_ON){
-    mins = parseInt(breaktimer / 60, 10);
-    secs = parseInt(breaktimer % 60, 10);
-
-    mins = mins < 10 ? "0" + mins : mins;
-    secs = secs < 10 ? "0" + secs : secs;
-
-    disp.textContent = mins + ":" + secs;
-
-    if (--breaktimer < 0) {
-      alert('Break\'s up! Start timer again.');
-      BREAK_ON = false;
-      breaktimer = dura;
-    }
-  }
-}, 1000);
-}
-
-function startBreaktime() {
-  if (STARS == 0){
-    alert('Keep working!');
-    BREAK_ON = false;
-  }
-  else if (STARS < 4){
-    var fiveMins = 3,
-    disp = document.querySelector('#break');
-    BREAK_ON = true;
-    startBreak(fiveMins, disp);
-  }
-
-  else if(STARS == 4){
-    var twentyMins = 10,
-    disp = document.querySelector('#break');
-    BREAK_ON = true;
-    startBreak(twentyMins, disp);
-  }
-};
 
 function startTiming() {
   if (BREAK_ON == false){

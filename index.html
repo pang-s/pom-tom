@@ -14,7 +14,7 @@
     <br><br>
     <span id="time">25:00</span>
     <br><br>
-    <button onclick="startTiming();">Start</button>
+    <button id="startButton" onclick="startTiming();">Start</button>
     <br><br>
     <span id="stars"> &#x2B50;&#x2B50;&#x2B50;&#x2B50; </span>
     <br><br>
@@ -27,7 +27,6 @@
     <script>
 
     var STARS = 0;
-    var BREAK_ON = false;
     function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     var power_on = true;
@@ -57,6 +56,7 @@
 
           if (STARS == 4){
             STARS = 0;
+            bigBreak();
 
           }
 
@@ -69,17 +69,17 @@
 
 function integrateBreak(){
 if(STARS < 4){
-  var twentyFiveMins = 2,
+  var fiveMins = 2,
       display = document.querySelector('#time');
-  integrateTimer(twentyFiveMins, display);
+  integrateTimer(fiveMins, display);
+}
 }
 
+function bigBreak(){
 
-else{
   var twentyFiveMins = 3,
       display = document.querySelector('#time');
   integrateTimer(twentyFiveMins, display);
-}
 
 }
 
@@ -98,10 +98,14 @@ setInterval(function () {
     display.textContent = minutes + ":" + seconds;
 
     if (--timer < 0) {
-      alert('Break\'s up! Start working.');
+      alert('Break\'s up!');
       power_on = false;
       if (STARS != 0){
       startTiming();
+    }
+    else{
+
+      document.getElementById("startButton").style.visibility = "visible";
     }
       //timer = duration;
     }
@@ -138,11 +142,12 @@ function updateStars(){
 
 
 function startTiming() {
-  if (BREAK_ON == false){
+  document.getElementById("startButton").style.visibility = "hidden";
     var twentyFiveMins = 1,
         display = document.querySelector('#time');
     startTimer(twentyFiveMins, display);
-  }
+
+
 };
 
     </script>

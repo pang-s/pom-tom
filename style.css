@@ -1,9 +1,32 @@
 p{
   font-family: verdana;
+  font-size: 17px;
+  color: #EA8282;
   text-align: center;
   padding: 20px 30px 30px 30px;
 }
 
-#main_div{
-  background-color: gray;
+
+html{
+  background-color: #FFC9C9;
+}
+
+#startButton{
+  background-color: #BCEFBC;
+border: none;
+border-radius: 4px;
+color: white;
+padding: 15px 27px;
+text-align: center;
+text-decoration: none;
+font-weight: bold;
+letter-spacing: 2px;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+}
+
+#myText{
+  color:#83ABE8;
 }

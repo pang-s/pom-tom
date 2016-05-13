@@ -11,8 +11,8 @@ https://en.wikipedia.org/wiki/Pomodoro_Technique
 
 ### :construction: TO DO :construction::
 - <strike> fix break timer </strike>
-- *aesthetic*
-- loTS!!! 
+- <strike> *aesthetic* </strike>
+- test it
 
 ### Built with
 

@@ -41,7 +41,7 @@ setInterval(function () {
 
 function integrateBreak(){
 if(STARS < 4){
-var fiveMins = 2,
+var fiveMins = 5*60,
   display = document.querySelector('#time');
 integrateTimer(fiveMins, display);
 }
@@ -49,7 +49,7 @@ integrateTimer(fiveMins, display);
 
 function bigBreak(){
 
-var twentyFiveMins = 3,
+var twentyFiveMins = 20*60,
   display = document.querySelector('#time');
 integrateTimer(twentyFiveMins, display);
 
@@ -115,7 +115,7 @@ starDisplay.textContent = String.fromCodePoint(127775)+ String.fromCodePoint(127
 
 function startTiming() {
 document.getElementById("startButton").style.visibility = "hidden";
-var twentyFiveMins = 1,
+var twentyFiveMins = 25*60,
     display = document.querySelector('#time');
 startTimer(twentyFiveMins, display);
 

@@ -1,5 +1,4 @@
-#pom-tom
-
+#pom-tom <img src="https://github.com/pang-s/pom-tom/blob/master/IconTemplate@2x.png?raw=true"> 
 A simple pomodoro time management tool powered by Electron.
 
 https://en.wikipedia.org/wiki/Pomodoro_Technique
@@ -17,7 +16,8 @@ https://en.wikipedia.org/wiki/Pomodoro_Technique
 - <strike> fix break timer </strike>
 - <strike> aesthetic </strike>
 - <strike> test it </strike>
-- tidy up :house:
+- <strike> tidy up :house: </strike>
+- more features maybs
 
 ### Built with
 

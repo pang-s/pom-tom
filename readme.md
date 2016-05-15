@@ -16,7 +16,8 @@ https://en.wikipedia.org/wiki/Pomodoro_Technique
 - <strike> fix break timer </strike>
 - <strike> aesthetic </strike>
 - <strike> test it </strike>
-- <strike> tidy up :house: </strike>
+- tidy up more :house:
+- quit button
 - more features maybs
 
 ### Built with

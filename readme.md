@@ -19,6 +19,7 @@ https://en.wikipedia.org/wiki/Pomodoro_Technique
 - tidy up more :house:
 - quit button
 - more features maybs
+- release
 
 ### Built with
 

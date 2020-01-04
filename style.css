@@ -8,11 +8,17 @@ p{
 
 
 html{
-  background-color: #FFC9C9;
+  background-color: #FFC1CC;
 }
 
+#myText{
+  color:#83ABE8;
+  text-align: center;
+}
+
+
 #startButton{
-  background-color: #BCEFBC;
+  background-color:#BCEFBC;
 border: none;
 border-radius: 4px;
 color: white;
@@ -27,7 +33,39 @@ margin: 4px 2px;
 cursor: pointer;
 }
 
-#myText{
-  color:#83ABE8;
+#stopButton{
+border: none;
+border-radius: 4px;
+color: #EB9486;
+text-align: right;
+text-decoration: none;
+font-weight: bold;
+letter-spacing: 2px;
+font-size: 8px;
+cursor: pointer;
+}
+
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
   text-align: center;
 }

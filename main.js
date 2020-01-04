@@ -1,10 +1,16 @@
-var menubar = require('menubar')
+const { menubar } = require('menubar');
 
-var mb = menubar({
-  height: 240,
-  width: 200
-})
+const mb = menubar({
+  'browserWindow': {
+    height: 240,
+    width: 200
+  }
 
-mb.on('ready', function ready () {
-  console.log('app is ready')
-})
+});
+
+mb.on('ready', () => {
+  console.log('app is ready');
+  // your app code here
+
+});
+
